@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Group AI | Non-Invasive Computational Model</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <header>
+            <h1>Blood Group Determination AI</h1>
+            <p class="subtitle">Non-Invasive Antigenic Pattern Recognition Model</p>
+        </header>
+
+        <main class="grid">
+            <!-- Left Column: Acquisition & Controls -->
+            <div class="column">
+                <section class="card">
+                    <div class="card-title">
+                        <i class="fas fa-microscope"></i>
+                        Data Acquisition
+                    </div>
+                    
+                    <div class="input-group">
+                        <label>Participant ID</label>
+                        <input type="text" id="participant-id" placeholder="PX-0001">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Acquisition Source</label>
+                        <select id="data-source">
+                            <option value="fingerprint">Fingerprint Scan</option>
+                            <option value="saliva">Saliva Antigen Sample</option>
+                            <option value="spectral">Spectrophotometric Log</option>
+                        </select>
+                    </div>
+
+                    <div class="upload-area" id="drop-zone">
+                        <i class="fas fa-cloud-upload-alt fa-3x" style="color: var(--primary); margin-bottom: 1rem;"></i>
+                        <p>Upload Biometric Data</p>
+                        <span style="font-size: 0.8rem; color: var(--text-dim);">Drag & Drop or Click to Browse</span>
+                        <input type="file" id="file-input" hidden accept="image/*">
+                    </div>
+
+                    <div id="preview-container" style="margin-top: 1.5rem; display: none;">
+                        <img id="image-preview" style="width: 100%; border-radius: 1rem; border: 1px solid var(--glass-border);">
+                    </div>
+
+                    <button class="btn-primary" id="start-btn" style="margin-top: 2rem;" disabled>
+                        Initialize Analysis
+                    </button>
+                </section>
+            </div>
+
+            <!-- Right Column: Processing Pipeline -->
+            <div class="column">
+                <section class="card" id="pipeline-card">
+                    <div class="card-title">
+                        <i class="fas fa-dna"></i>
+                        Computational Pipeline
+                    </div>
+                    
+                    <div class="pipeline" id="pipeline">
+                        <div class="step" id="step-1">
+                            <div class="step-icon">1</div>
+                            <div class="step-info">
+                                <h4>Data Preprocessing</h4>
+                                <p>Normalization, Filtering & Noise Reduction</p>
+                            </div>
+                            <div class="status-spinner"></div>
+                        </div>
+
+                        <div class="step" id="step-2">
+                            <div class="step-icon">2</div>
+                            <div class="step-info">
+                                <h4>Feature Extraction</h4>
+                                <p>Antigenic Descriptor Identification (PCA)</p>
+                            </div>
+                            <div class="status-spinner"></div>
+                        </div>
+
+                        <div class="step" id="step-3">
+                            <div class="step-icon">3</div>
+                            <div class="step-info">
+                                <h4>Antigenic Pattern Recognition</h4>
+                                <p>Logical Marker Correlation Analysis</p>
+                            </div>
+                            <div class="status-spinner"></div>
+                        </div>
+
+                        <div class="step" id="step-4">
+                            <div class="step-icon">4</div>
+                            <div class="step-info">
+                                <h4>CNN Classification</h4>
+                                <p>AlexNet Architecture Processing</p>
+                            </div>
+                            <div class="status-spinner"></div>
+                        </div>
+                    </div>
+
+                    <!-- Final Result View -->
+                    <div class="result-card" id="result-view">
+                        <p class="subtitle">Predicted Blood Group</p>
+                        <div class="blood-type" id="blood-result">--</div>
+                        <div class="accuracy-badge" id="accuracy-result">Confidence: 0.0%</div>
+                        
+                        <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                            <button class="btn-primary" onclick="window.location.reload()" style="width: auto;">Reset System</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Project Info / Lit Review Summary -->
+                <section class="card" style="margin-top: 2rem;">
+                    <div class="card-title">
+                        <i class="fas fa-info-circle"></i>
+                        Model Information
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--text-dim); line-height: 1.6;">
+                        This computational model utilizes <strong>Convolutional Neural Networks (CNN)</strong> for the identification of ABO and RH blood group antigens. Based on research by <em>Patil and Ingle (2021)</em> and <em>Alshehri et al. (2018)</em>, the system identifies logical markers in biometric data to eliminate invasive sampling.
+                    </p>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
